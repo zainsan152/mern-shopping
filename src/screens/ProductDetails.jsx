@@ -11,11 +11,11 @@ const ProductDetails = ({match}) => {
     const [product, setProduct] = useState([])
     useEffect(() => {
         const fetchProduct = async () => {
-            const {data} = await axios.get(`/products/${match.params.id}`)
-            setProduct(data)
+            const {data} = await axios.get(`/api/products/${match.params.id}`)
+            setProduct(data);
         }
-        fetchProduct()
-    },[match])
+        fetchProduct();
+    },[match]);
     return (
         <div>
             <Link to="/" className="btn btn-light"><i class="fas fa-arrow-left"></i> &nbsp;GO BACK</Link>
